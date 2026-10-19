@@ -1,0 +1,19 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mock-btc-price-mcp"
+version = "1.0.0"
+description = "A minimal MCP server that returns a fixed BTC price for demos."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Your Name" }]
+dependencies = ["mcp>=1.0,<2.0"]
+
+[project.scripts]
+mock-btc-price-mcp = "mock_btc_price_mcp.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/mock_btc_price_mcp"]
